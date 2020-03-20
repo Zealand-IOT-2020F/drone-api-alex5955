@@ -28,22 +28,22 @@ class Drone(object):
         self.sock.close()
         
     def forward(self, amount):
-        self.sendCommand("forward " + amount)
+        self.sendCommand("forward " + str(amount))
 
     def back(self, amount):
-        self.sendCommand("back " + amount)
+        self.sendCommand("back " + str(amount))
 
-    def rotateCW(self,x):
-        self.sendCommand("cw" + x)
+    def rotateCW(self,amount):
+        self.sendCommand("cw" + str(amount))
 
-    def rotateCCW(self,x):
-        self.sendCommand("ccw" + x)
+    def rotateCCW(self,amount):
+        self.sendCommand("ccw" + str(amount))
 
     def printinfo(self):
-        print("Hallo Drone at : IP:" + self.ip + " Port: " + self.port)
+        print("Hallo Drone at : IP:" + str(self.ip) + " Port: " + str(self.port))
 
     def left(self, amount):
-        self.sendCommand("left " + amount)
+        self.sendCommand("left " + str(amount))
     
     def right(self, amount):
-        self.sendCommand("right " + amount)
+        self.sendCommand("right " + str(amount))
