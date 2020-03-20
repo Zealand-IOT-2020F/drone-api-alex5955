@@ -1,7 +1,7 @@
-import drone
+import Drone
 import time
 
-drone1 = drone.Drone('192.168.10.1',8889)
+drone1 = Drone.Drone('192.168.10.1',8889)
 
 #Info printed
 drone1.battery()
@@ -62,4 +62,3 @@ drone1.land()
 
 #end program
 drone1.end()
-
