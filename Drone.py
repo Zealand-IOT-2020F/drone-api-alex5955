@@ -12,7 +12,9 @@ class Drone(object):
 
     def sendCommand(self, command):
         self.sock.sendto(command.encode(), (self.address))
-        print("Sent command: " + command)
+        #data = self.sock.recvfrom(1518)
+        #print(data.decode(encoding="utf-8"))
+        print("Sent message: " + command)
 
     def takeOff(self):
         self.sendCommand("takeoff")
