@@ -10,11 +10,12 @@ class Drone(object):
         self.TelloPort = port
         
         # Create a UDP socket
-        self.Host =''
+        self.Host =""
         self.HostPort = 9000
         self.locaddr = (self.Host,self.HostPort)
         self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        self.tello_address = ('192.168.10.1', 8889)
+        #self.tello_address = ('192.168.10.1', 8889)
+        self.tello_address = (ip, port)
         self.sock.bind(self.locaddr)
 
     def sendCommand(self,TelloMessage):
@@ -29,6 +30,11 @@ class Drone(object):
         # Return data to caller
         print(data.decode(encoding="utf-8"))
         return "from sendmessage " + TelloMessage + " end "
+
+    def connect(self):
+        print("Connect")
+        result = self.sendMessage("command")
+        print (result)
 
     def takeOff(self):
         self.sendCommand("takeoff")
