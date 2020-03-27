@@ -3,6 +3,9 @@ import time
 
 drone1 = Drone.Drone('192.168.10.1',8889)
 
+#tilføjet connect
+drone1.connect()
+
 #Info printed
 drone1.battery()
 drone1.printinfo()
